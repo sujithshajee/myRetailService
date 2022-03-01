@@ -1,11 +1,26 @@
 import json
-from flask import request, Blueprint, Response, make_response, jsonify
+from flask import request, Blueprint, Response
 from flask import current_app
-from product.product_manager import ProductManager
+from product.product_api_manager import ProductManager
 
 products = Blueprint("products", __name__)
 
 
+# Default response for undefined routes
+@products.route('/', defaults={'path': ''})
+@products.route('/<path:path>')
+def get_default(path):
+    print("[+] Default response")
+    response = Response(content_type="application/json")
+    response.set_data("""{
+                          "code": "Invalid_URI_Request",
+                          "message": "Valid URIs are GET and PUT on /product/<int:product_id>"
+                        }""")
+    response.status_code = 404
+    return response
+
+
+# GET call implementation
 @products.route("/product/<int:product_id>", methods=["GET"])
 def get_product(product_id):
     print("[+] Generating response for product_id {}".format(product_id))
@@ -16,6 +31,7 @@ def get_product(product_id):
     return response
 
 
+# PUT call implementation
 @products.route("/product/<int:product_id>", methods=["PUT"])
 def put_product(product_id):
     print("[+] Updating details for product_id {}".format(product_id))
@@ -26,5 +42,3 @@ def put_product(product_id):
     response.status_code = 201
     response.set_data(json.dumps(new_product))
     return response
-
-

@@ -1,7 +1,8 @@
 import requests
-from utils.exceptions import ProductNotFoundError
+from product.product_exceptions import ProductNotFoundError
 
 
+# Implementation to query external api and fetch the name of the product if product id is valid.
 class ProductServiceManager(object):
     def __init__(self, endpoint, key):
         self.endpoint = endpoint

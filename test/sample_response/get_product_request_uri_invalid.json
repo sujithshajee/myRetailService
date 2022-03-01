@@ -1,0 +1,4 @@
+{
+  "code": "Invalid_URI_Request",
+  "message": "Valid URIs are GET and PUT on /product/<int:product_id>"
+}

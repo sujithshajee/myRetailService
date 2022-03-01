@@ -2,8 +2,6 @@ Flask
 pymongo
 pyyaml
 requests
-flake8
+pytest
 pylint
-requests-mock
 coverage
-jsonschema

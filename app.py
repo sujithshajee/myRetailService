@@ -1,8 +1,9 @@
 from flask import Flask
-from product.products import products
+from product.product_api import products
 import configuration.configuration_loader as configuration_loader
-from utils.exceptions import ErrorResponse, InvalidRequestError, ProductNotFoundError
+from product.product_exceptions import ErrorResponse, InvalidRequestError, ProductNotFoundError
 
+# Initialize flask application
 app = Flask(__name__)
 app.register_blueprint(products)
 configuration_loader.app(app)
