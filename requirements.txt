@@ -1,0 +1,9 @@
+Flask
+pymongo
+pyyaml
+requests
+flake8
+pylint
+requests-mock
+coverage
+jsonschema

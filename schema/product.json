@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "type": "number",
+            "description": "Unique product ID"
+        },
+        "current_price": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "currency_code": {
+                    "type": "string",
+                    "description": "Currency code for price"
+                },
+                "value": {
+                    "type": "number",
+                    "description": "Current price of product."
+                }
+            },
+            "required": [
+                "currency_code",
+                "value"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "current_price"
+    ],
+    "$schema": "http://json-schema.org/draft/2020-12/schema"
+}
