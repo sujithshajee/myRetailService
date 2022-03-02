@@ -1,7 +1,6 @@
-Flask
+flask
 pymongo
 pyyaml
 requests
-pytest
-pylint
-coverage
+jsonschema
+python-dotenv

@@ -10,11 +10,9 @@ from product.product_exceptions import ProductNotFoundError, InvalidRequestError
 
 class ProductManager(object):
     def __init__(self, config):
-        self.config = config
-        db_config = self.config.get("database_server")
-        self.db_manager = DatabaseManager(db_config)
-        endpoint = self.config.get('external_api').get("url")
-        key = self.config.get('external_api').get("key")
+        self.db_manager = DatabaseManager()
+        endpoint = os.environ.get('EXTERNAL_API_URL')
+        key = os.environ.get('EXTERNAL_API_KEY')
         self.product_service_manager = ProductServiceManager(endpoint, key)
 
     # fetch details from database for the product ID in the incoming request

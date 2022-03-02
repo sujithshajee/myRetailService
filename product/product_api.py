@@ -12,10 +12,7 @@ products = Blueprint("products", __name__)
 def get_default(path):
     print("[+] Default response")
     response = Response(content_type="application/json")
-    response.set_data("""{
-                          "code": "Invalid_URI_Request",
-                          "message": "Valid URIs are GET and PUT on /product/<int:product_id>"
-                        }""")
+    response.set_data("""{ "code": "Invalid_URI_Request", "message": "Valid URIs are GET and PUT on /product/<int:product_id>" }""")
     response.status_code = 404
     return response
 

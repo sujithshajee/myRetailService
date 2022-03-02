@@ -1,12 +1,12 @@
 from flask import Flask
+from config import Config
 from product.product_api import products
-import configuration.configuration_loader as configuration_loader
 from product.product_exceptions import ErrorResponse, InvalidRequestError, ProductNotFoundError
 
 # Initialize flask application
 app = Flask(__name__)
 app.register_blueprint(products)
-configuration_loader.app(app)
+app.config.from_object(Config)
 
 
 @app.errorhandler(ErrorResponse)
