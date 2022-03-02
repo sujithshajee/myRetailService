@@ -3,6 +3,7 @@ import os
 
 class Config:
     DEBUG = False
+    ENVIRONMENT = 'Production'
     DATABASE_SERVER_HOST = os.environ.get('DATABASE_SERVER_HOST')
     DATABASE_SERVER_PORT = os.environ.get('DATABASE_SERVER_PORT')
     DATABASE_NAME = os.environ.get('DATABASE_NAME')
