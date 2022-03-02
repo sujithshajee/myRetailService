@@ -27,7 +27,6 @@ jobs:
         pip install flask
         pip install pymongo
         pip install requests
-        pip install json
         pip install jsonschema
         pip install python-dotenv
         pip install pylint
