@@ -20,7 +20,8 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-
+    - name: Create mongoDB Docker container
+      run: sudo docker run -d -p 27017:27017 mongo:latest
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
