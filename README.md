@@ -1,7 +1,7 @@
 # myRetailService
 
 # Case-Study-Challenge
-![Workflow](https://github.com/sujithshajee/myRetailService/actions/workflows/test.yml/badge.svg)
+![Workflow](https://github.com/sujithshajee/myRetailService/actions/workflows/app_test.yaml/badge.svg)
 ![Docker Image CI](https://github.com/sujithshajee/myRetailService/workflows/Docker%20Image%20CI/badge.svg)
 
 ##Description
